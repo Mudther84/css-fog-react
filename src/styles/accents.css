@@ -1,0 +1,55 @@
+/* Accent colour per page. Home keeps the original green (the :root tokens).
+   Everything else is derived from --ac with color-mix(), no gradients. */
+html[data-accent=orange]{--ac:#f97316;--ac2:#fdba74;--ac3:#fb923c;--dk:#7c2d12;--acL:#ea580c;--ac2L:#c2410c}
+html[data-accent=blue]{--ac:#3b82f6;--ac2:#93c5fd;--ac3:#60a5fa;--dk:#1e3a8a;--acL:#2563eb;--ac2L:#1d4ed8}
+html[data-accent=purple]{--ac:#a855f7;--ac2:#d8b4fe;--ac3:#c084fc;--dk:#581c87;--acL:#9333ea;--ac2L:#7e22ce}
+html[data-accent=pink]{--ac:#ec4899;--ac2:#f9a8d4;--ac3:#f472b6;--dk:#831843;--acL:#db2777;--ac2L:#be185d}
+html[data-accent=yellow]{--ac:#eab308;--ac2:#fde047;--ac3:#facc15;--dk:#713f12;--acL:#ca8a04;--ac2L:#a16207}
+
+/* dark mode, derived tokens */
+html[data-accent]:not([data-accent=green]){
+ --bg:color-mix(in srgb,var(--ac) 3%,#000);
+ --ink:color-mix(in srgb,var(--ac) 9%,#fff);
+ --mu:color-mix(in srgb,var(--ac) 30%,#b4b4b4);
+ --ok:var(--ac3);
+ --hd:color-mix(in srgb,color-mix(in srgb,var(--ac) 3%,#000) 78%,transparent);
+ --code:color-mix(in srgb,var(--ac) 3%,#000);
+ --codeink:color-mix(in srgb,var(--ac2) 75%,#fff);
+ --dlg:color-mix(in srgb,var(--ac) 7%,#000);
+ --lead:color-mix(in srgb,var(--ac) 20%,#dadada);
+ --rt:var(--dk);
+ --btnink:color-mix(in srgb,var(--ac) 8%,#000);
+ --dk2:color-mix(in srgb,var(--dk) 40%,#000);
+ --sk1:color-mix(in srgb,var(--ac) 14%,#fff);
+ --sk2:color-mix(in srgb,var(--ac2) 55%,#fff);
+ --tint1:color-mix(in srgb,var(--ac) 14%,#fff);
+ --tint2:color-mix(in srgb,var(--ac) 32%,#fff);
+ --face:var(--ac2L);
+ --chipbg:color-mix(in srgb,color-mix(in srgb,var(--dk) 30%,#000) 88%,transparent);
+ --chipfg:color-mix(in srgb,var(--ac2) 75%,#fff);
+}
+/* light mode, derived tokens */
+html[data-accent]:not([data-accent=green])[data-theme=light]{
+ --ac:var(--acL);--ac2:var(--ac2L);
+ --bg:color-mix(in srgb,var(--ac) 5%,#fff);
+ --ink:color-mix(in srgb,var(--dk) 70%,#000);
+ --pn:rgba(255,255,255,.85);
+ --pn2:color-mix(in srgb,var(--ac) 13%,transparent);
+ --ln:color-mix(in srgb,var(--dk) 22%,transparent);
+ --mu:color-mix(in srgb,var(--ac) 35%,#4a4a4a);
+ --ok:var(--ac2L);
+ --hd:color-mix(in srgb,color-mix(in srgb,var(--ac) 5%,#fff) 88%,transparent);
+ --code:color-mix(in srgb,var(--dk) 25%,#000);
+ --codeink:color-mix(in srgb,var(--ac3) 40%,#fff);
+ --dlg:#fff;
+ --lead:color-mix(in srgb,var(--dk) 55%,#222);
+ --inbg:#fff;
+ --qh:color-mix(in srgb,var(--ac) 10%,transparent);
+ --rt:color-mix(in srgb,var(--ac3) 35%,#fff);
+ --btnink:#fff;
+ --track:color-mix(in srgb,var(--dk) 14%,transparent);
+ --sh:color-mix(in srgb,var(--dk) 18%,transparent);
+ --face:var(--ac2L);
+ --chipbg:color-mix(in srgb,color-mix(in srgb,var(--dk) 30%,#000) 90%,transparent);
+ --chipfg:color-mix(in srgb,var(--ac3) 45%,#fff);
+}
